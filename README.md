@@ -161,6 +161,9 @@ The linear velocity vector of the rigidbody. It represents the rate of change of
 ```rigidbody.AngularVelocity```
 The angular velocity vector of the rigidbody measured in radians per second.
 
+```rigidbody.IsKinematic```
+Controls whether physics affects the rigidbody.
+
 ### Methods:
 
 ```rigidbody:AddForce(force, forceMode)```
