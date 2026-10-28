@@ -38,7 +38,7 @@ Import this into a Unity 6 project.
     - Rigidbody Interpolation is recommended to be set to Interpolate, and Collision Detection to Continous or Continous Dynamic.
     - A Rigidbody's Mass is it's weight.
 - Add a ChempComponentMods component and set it's type to Chemp Entity.
-- For every physics body / Rigidbody in your spawnable, add a ChempComponentMods component to it and assign Entity as the ChempComponentMods with it's type as Chemp Entity on the root of your spawnable.
+- For every physics body / Rigidbody in your spawnable, add a ChempComponentMods component to it, set it's type to Chemp Rigidbody Entity, and assign Entity as the ChempComponentMods with it's type as Chemp Entity on the root of your spawnable.
 - To make it grabbable, go to each collider you want to be able to be grabbed, and add a ChempComponentMods component.
 - Change the component type to Grip, and assign Colliders To Phase with your object's colliders.
 - If you like, you can add a LuaBehaviour script, and write a script in Lua. To do this, follow the steps below.
