@@ -72,96 +72,96 @@ Below lies the Lua documentation.
 Accessible via `transform` on any Lua script.
 ### Variables:
 
-```transform.Position```
+```transform.Position - LuaVector3```
 Returns the position of the transform object. Useful for knowing where an object is or moving an object.
 
-```transform.EulerAngles```
+```transform.EulerAngles - LuaVector3```
 Returns the position of the transform object. Useful for knowing where an object is or moving an object.
 
-```transform.Forward```
+```transform.Forward - LuaVector3```
 Returns a normalized vector representing the blue axis of the transform in world space.
 
-```transform.Right```
+```transform.Right - LuaVector3```
 Returns a normalized vector representing the red axis of the transform in world space.
 
-```transform.Up```
+```transform.Up - LuaVector3```
 Returns a normalized vector representing the green axis of the transform in world space.
 
-```transform.LocalScale```
+```transform.LocalScale - LuaVector3```
 The scale of the transform relative to the GameObjects parent.
 
-```transform.Parent```
+```transform.Parent - LuaTransform```
 The parent of the transform.
 
-```transform.GameObject```
+```transform.GameObject - LuaGameObject```
 The game object this transform is attached to.
 
 ### Methods:
 
-```transform:TransformPoint(LuaVector3)```
+```transform:TransformPoint(LuaVector3) - LuaVector3```
 Transforms position from local space to world space.
 
-```transform:InverseTransformPoint(LuaVector3)```
+```transform:InverseTransformPoint(LuaVector3) - LuaVector3```
 Transforms position from world space to local space.
 
 ## LuaGameObject
 Accessible via `gameObject` on any Lua script.
 ### Variables:
 
-```gameObject.Transform```
+```gameObject.Transform - LuaTransform```
 The Transform attached to the GameObject.
 
-```gameObject.Name```
+```gameObject.Name - string```
 The name of the object.
 
-```gameObject.Tag```
+```gameObject.Tag - string```
 The tag assigned to the GameObject.
 
-```gameObject.Active```
+```gameObject.Active- bool```
 The local active state of the GameObject. True if active, false if inactive.
 
 ### Methods:
 
-```gameObject:FindChild("child name")```
+```gameObject:FindChild("child name") - LuaGameObject```
 Finds a child by name and returns it.
 
 ## LuaCollider
 Accessible via `collider` on any Lua script. ```nil``` if none is found.
 ### Variables:
 
-```collider.AttachedRigidbody```
+```collider.AttachedRigidbody - LuaRigidbody```
 The rigidbody the collider is attached to.
 
 ## LuaCollision
 Given by `OnCollisionEnter`, `OnCollisionExit`, and `OnCollisionStay`
 ### Variables:
 
-```collision.Body```
+```collision.Body - LuaRigidbody```
 The Rigidbody of the collider that your object collides with
 
-```collision.Collider```
+```collision.Collider - LuaCollider```
 The collider that your object collides with
 
-```collision.GameObject```
+```collision.GameObject - LuaGameObject```
 The GameObject whose collider you are colliding with.
 
-```collision.RelativeVelocity```
+```collision.RelativeVelocity - LuaVector3```
 The relative linear velocity of the two colliding objects
 
-```collision.Rigidbody```
+```collision.Rigidbody - LuaRigidbody```
 The Rigidbody we hit. ```nil``` if the object we hit is a collider with no rigidbody attached.
 
 ## LuaRigidbody
 Accessible via `rigidbody` on any Lua script. ```nil``` if none is found.
 ### Variables:
 
-```rigidbody.LinearVelocity```
+```rigidbody.LinearVelocity - LuaVector3```
 The linear velocity vector of the rigidbody. It represents the rate of change of Rigidbody position.
 
-```rigidbody.AngularVelocity```
+```rigidbody.AngularVelocity - LuaVector3```
 The angular velocity vector of the rigidbody measured in radians per second.
 
-```rigidbody.IsKinematic```
+```rigidbody.IsKinematic - bool```
 Controls whether physics affects the rigidbody.
 
 ### Methods:
@@ -178,16 +178,16 @@ Create one with ```lv3 = LuaVector3(1,1,1)```, replacing ```x```, ```y```, ```z`
 
 ### Fields:
 
-```LuaVector3.X```
+```LuaVector3.X - float```
 X component of the vector.
 
-```LuaVector3.Y```
+```LuaVector3.Y - float```
 X component of the vector.
 
-```LuaVector3.Z```
+```LuaVector3.Z - float```
 X component of the vector.
 
-```LuaVector3.Magnitude```
+```LuaVector3.Magnitude - float```
 Returns the length of this vector.
 
 # Static Lua Types
@@ -196,10 +196,10 @@ Has static methods related to the Player.
 
 ### Methods:
 
-```LuaPlayer.GetPlayerRigidbody()```
+```LuaPlayer.GetPlayerRigidbody() - LuaRigidbody```
 Gets the main / body Rigidbody of the Player as a LuaRigidbody.
 
-```LuaPlayer.GetPlayerHand(leftHand)```
+```LuaPlayer.GetPlayerHand(leftHand) - LuaRigidbody```
 Gets the rigidbody of a player hand, which hand is determined by ```leftHand```. Pass ```true``` if you want the left hand, ```false``` for the right.
 
 # Built-In methods for Lua
